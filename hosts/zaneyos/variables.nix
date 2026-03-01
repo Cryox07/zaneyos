@@ -9,6 +9,11 @@
   # SDDM background is set with stylixImage
   displayManager = "tui";
 
+  # powerManagement.enable = true;
+  boot.resumeDevice = "/dev/disk/by-uuid/b48c0c99-4898-4cf5-9ca6-272dd6de8eaf";
+  boot.kernelParams = ["resume=/dev/disk/by-uuid/b48c0c99-4898-4cf5-9ca6-272dd6de8eaf"];
+  boot.initrd.systemd.emabled = true;
+
   # Emable/disable bundled applications
   tmuxEnable = false;
   alacrittyEnable = false;

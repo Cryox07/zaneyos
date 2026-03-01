@@ -102,5 +102,6 @@ in {
       python3 # Python 3 programming language
       cider
       nautilus
+      nvtopPackages.nvidia
     ];
 }
