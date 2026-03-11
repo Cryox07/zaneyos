@@ -103,5 +103,6 @@ in {
       cider
       nautilus
       nvtopPackages.nvidia
+      bottles
     ];
 }
