@@ -104,5 +104,12 @@ in {
       nautilus
       nvtopPackages.nvidia
       bottles
+      virt-manager
+      virt-viewer
+      spice
+      spice-gtk
+      spice-protocol
+      virtio-win # Essential drivers for Windows performance
+      win-spice
     ];
 }

@@ -153,4 +153,13 @@
   # Set network hostId if required (needed for zfs)
   # Otherwise leave as-is
   hostId = "5ab03f50";
+
+  networking.firewall.enable = false;
+  programs.dconf.enable = true;
+  # Manage the virtualisation services
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  # Add your user to the libvirtd group
+  users.users.marcel.extraGroups = ["libvirtd"];
 }
