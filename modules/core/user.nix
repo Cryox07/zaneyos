@@ -36,6 +36,7 @@ in {
       "scanner"
       "wheel" #sudo access
       "vboxusers" #Virtual Box
+      "openrazer" # Openrazor
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

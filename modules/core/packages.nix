@@ -104,12 +104,8 @@ in {
       nautilus
       nvtopPackages.nvidia
       bottles
-      virt-manager
-      virt-viewer
-      spice
-      spice-gtk
-      spice-protocol
-      virtio-win # Essential drivers for Windows performance
-      win-spice
+      polychromatic
+      #linuxKernel.packages.linux_7_0.openrazer
+      openrazer-daemon
     ];
 }

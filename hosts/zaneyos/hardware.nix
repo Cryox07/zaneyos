@@ -14,8 +14,13 @@
 
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
+  boot.kernelModules = ["kvm-intel" "vfio_pci" "vfio" "vfio_iommu_type1"];
   boot.extraModulePackages = [];
+  boot.kernelParams = [
+    "intel_iommu=on"
+    "iommu=pt"
+    "vfio-pci.ids=10de:1c82,10de:0fb9"
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c8eab3f0-e4c8-4655-ad8b-d36ad3917808";

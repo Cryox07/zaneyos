@@ -70,7 +70,7 @@
           #  home-manager = {
           #    useGlobalPkgs = true;
           #    useUserPackages = true;
-          #    backupFileExtension = "backup";
+          #    backupFileExtension = "backup-" + (builtins.toString (inputs.self.lastModified or "0"));
           #  };
           #}
         ];

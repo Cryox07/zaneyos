@@ -9,6 +9,15 @@
 
     libvirtd = {
       enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        verbatimConfig = ''
+          user = "marcel"
+          group = "libvirtd"
+        '';
+      };
     };
 
     virtualbox.host = {
@@ -17,12 +26,21 @@
     };
   };
 
-  programs = {
-    virt-manager.enable = false;
-  };
+  # Manage the virtualisation services
+  programs.virt-manager.enable = true;
+
+  # Add your user to the libvirtd group
+  users.users.marcel.extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm" "video" "render"];
 
   environment.systemPackages = with pkgs; [
-    virt-viewer # View Virtual Machines
+    virt-manager
+    virt-viewer
+    spice
+    spice-gtk
+    spice-protocol
+    virtio-win # Essential drivers for Windows performance
+    win-spice
+    swtpm
     lazydocker
     docker-client
   ];
